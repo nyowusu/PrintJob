@@ -13,16 +13,86 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
+    <script src="./lib/jquery-3.4.1.js" async defer></script>
 </head>
 
 <body>
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <h1>Hello World</h1>
-    <p>This is my Father's world. And to my listening ear.</p>
+    <header>
+        <nav></nav>
+        <div class="headerTitle">
+            <h1>Request for printing</h1>
+        </div>
+    </header>
+    <main>
+        <form>
+            <!--This sections has the details of the teacher or officer making the request-->
+            <section class="requestInfo">
+                <h2>Requesting officer's Details</h2>
+                <label for="dateReceived">Request Date</label>
+                <input type="date" name="dateReceived" id="dateReceived" class="reqInfoInput" />
+                <label for="dateRequired">Date Required</label>
+                <input type="date" name="dateRequired" id="dateRequired" class="reqInfoInput" />
+                <label for="staffName">Staff Name: </label>
+                <input type="text" name="staffName" id="staffName" class="reqInfoInput" placeholder="Staff Full Name" />
+                <label for="staffInitials">Staff Initials: </label>
+                <!-- the staff name and initials will be changed to a dropdown list in the fure
+                    data to be taken from either SIMS or updated manually or through an automated process -->
+                <input type="text" name="staffInitials" id="staffInitials" class="reqInfoInput" placeholder="Staff Initials" />
+                <label for="subject">Subject:</label>
+                <select id="subject" class="reqInfoInput">
+                    <option value="choice" >Choose a Subject</option>
+                    <option value="maths" >Maths</option>
+                    <option value="english" >English</option>
+                    <option value="science" >Science</option>
+                    <option value="history">History</option>
+                    <option value="geography">Geography</option>
+                    <option value="art" >Art</option>
+                    <option value="french" >French</option>
+                    <option value="ftech">foot Technology</option>
+                    <option value="dtech">D-Tech</option>
+                </select>
+                <label for="budget">Buget:</label>
+                <select id="budget" class="reqInfoInput">
+                        <option value="choice">Choose a Budget</option>
+                        <option value="maths" >Maths</option>
+                        <option value="english" >English</option>
+                        <option value="science" >Science</option>
+                        <option value="history">History</option>
+                        <option value="geography">Geography</option>
+                        <option value="art" >Art</option>
+                        <option value="french" >French</option>
+                        <option value="ftech">foot Technology</option>
+                        <option value="dtech">D-Tech</option>
+                </select>
+                <label for="workTitle">Title of Work</label>
+                <!--<input id="workTitle" type="tel" maxlength="100" name="workTitle" class="reqInfoInput" />-->
+                <textarea id="workTitle" name="workTitle" rows="4" cols="50">
+Title or Description of the work to be printed
+                </textarea>
+                <label for="numberCopies">Number of Copies</label>
+                <input id="numberCopies" name="numberCopies" class="reqInfoInput" type="number" placeholder="Number of Copies" />
+                <label for="numberSets">Number of Sets</label>
+                <input id="numberSets" name="numberSetes" class="reqInfoInput" type="number" placeholder="Number of Sets" />
+            </section>
+            <!-- The details of the printing request being made -->
+            <section class="printInstructions">
+                <h2>Printing Instructions</h2>
+                <h3>(Select Where appropriate)</h3>
+            </section>
+        </form>
+    </main>
 
-    <script src="" async defer></script>
+    <footer>
+
+    </footer>
+    <script>
+        $(document).ready(function() {
+            $("#dateReceived").val(new Date().toDateInputValue());
+        });
+    </script>
 </body>
 
 </html>
